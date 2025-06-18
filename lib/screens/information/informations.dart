@@ -8,6 +8,7 @@ import 'package:chatify/screens/signup/textfieldmake.dart';
 import 'package:chatify/theaming/color.dart';
 import 'package:chatify/theaming/font.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 class Informations extends StatefulWidget {
@@ -89,7 +90,10 @@ class _InformationsState extends State<Informations> {
             ),
           ),
           ElevatedButton(
-            onPressed: _saveName,
+            onPressed: () async {
+              await _saveName();
+              GoRouter.of(context).go("/signin/chat");
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: ColorManege.mainblue,
               minimumSize: const Size(250, 60),

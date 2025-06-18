@@ -63,7 +63,7 @@ class Signin extends StatelessWidget {
                         .select("username")
                         .eq('id', Supabase.instance.client.auth.currentUser!.id)
                         .maybeSingle();
-                    if (response != null) {
+                    if (response != null && response["username"] != null) {
                       Provider.of<UserProvider>(context, listen: false)
                           .fetchUsername();
                       GoRouter.of(context).go("/signin/chat");

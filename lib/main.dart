@@ -40,7 +40,7 @@ class MainApp extends StatelessWidget {
   }
 }
 
-final _route = GoRouter(initialLocation: "/informations", routes: [
+final _route = GoRouter(initialLocation: "/signin", routes: [
   GoRoute(
     path: "/signup",
     builder: (context, state) => SignUp(),
